@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 export default class Application {
   constructor() {
@@ -22,6 +23,7 @@ export default class Application {
     this.scene.add(this.camera);
 
     document.body.appendChild(this.renderer.domElement);
+    new OrbitControls(this.camera, this.renderer.domElement);
     window.addEventListener(
       "resize",
       () => {
@@ -33,6 +35,11 @@ export default class Application {
       },
       false
     );
+
+    //this.composer = new EffectComposer(this.renderer);
+    //this.renderPass = new RenderPass(this.scene, this.camera);
+    //this.renderPass.renderToScreen = false;
+    //this.composer.addPass(this.renderPass);
   }
 
   get dt() {
@@ -46,6 +53,7 @@ export default class Application {
     requestAnimationFrame(this.renderLoop);
     this.update(this.dt);
     this.renderer.render(this.scene, this.camera);
+    //this.composer.render(this.dt);
   };
 
   start() {

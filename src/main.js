@@ -1,10 +1,10 @@
 import * as THREE from "three";
-import { SphereGeometry } from "three";
 import { CelestialObject, Movement } from "./CelestialObj";
 import Application from "./Engine";
 import SolarSystem from "./SolarSystem";
 import Stars from "./Stars";
 import Sun from "./Sun";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 class ActualApp extends Application {
   constructor() {
@@ -17,7 +17,7 @@ class ActualApp extends Application {
     this.solarSystem = new SolarSystem();
     this.scene.add(this.solarSystem);
 
-    let earthMovement = new Movement(20, 0.0005, 0.005, 0.0);
+    let earthMovement = new Movement(20, 0.0003, 0.005, 0.0);
     let earth = new CelestialObject(
       "Earth",
       1.0,

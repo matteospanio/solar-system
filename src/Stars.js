@@ -5,9 +5,9 @@ export default class Stars extends THREE.Points {
     let geometry = new THREE.BufferGeometry();
     let vertices = [];
     for (let i = 0; i < 10000; i++) {
-      vertices.push(THREE.MathUtils.randFloatSpread(2000)); // x
-      vertices.push(THREE.MathUtils.randFloatSpread(2000)); // y
-      vertices.push(THREE.MathUtils.randFloatSpread(2000)); // z
+      vertices.push(THREE.MathUtils.randFloatSpread(3000)); // x
+      vertices.push(THREE.MathUtils.randFloatSpread(3000)); // y
+      vertices.push(THREE.MathUtils.randFloatSpread(3000)); // z
     }
     geometry.setAttribute(
       "position",
