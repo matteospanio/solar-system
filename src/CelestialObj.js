@@ -16,6 +16,12 @@ export class CelestialObject extends THREE.Mesh {
 
   update(t) {
     this.matrix = this.movement.update(t);
+
+    this.children.forEach((sat) => {
+      if (sat instanceof CelestialObject) {
+        sat.update(t);
+      }
+    });
   }
 }
 
