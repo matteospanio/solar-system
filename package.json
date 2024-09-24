@@ -7,7 +7,7 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "vite": "^2.9.18",
+    "vite": "^5.4.7",
     "vite-plugin-string": "^1.0.1"
   },
   "dependencies": {
